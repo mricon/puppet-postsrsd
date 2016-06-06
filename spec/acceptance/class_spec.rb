@@ -5,6 +5,8 @@ describe 'postsrsd class' do
     # Using puppet_apply as a helper
     it 'should work idempotently with no errors' do
       pp = <<-EOS
+      class { '::tao': }
+
       class { 'postsrsd': }
       EOS
 
@@ -21,5 +23,11 @@ describe 'postsrsd class' do
       it { is_expected.to be_enabled }
       it { is_expected.to be_running }
     end
+
+    describe file('/etc/sysconfig/postsrsd') do
+      it { should be_file }
+      its(:content) { should match /^SRS_DOMAIN=/ }
+    end
+
   end
 end

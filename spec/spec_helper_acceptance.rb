@@ -17,6 +17,11 @@ RSpec.configure do |c|
     puppet_module_install(:source => proj_root, :module_name => 'postsrsd')
     hosts.each do |host|
       on host, puppet('module', 'install', 'puppetlabs-stdlib'), { :acceptable_exit_codes => [0,1] }
+
+      # install deps from git
+      install_package host, 'git'
+      on host, "cd /etc/puppet/modules; git clone https://github.com/thomasvs/puppet-yum.git yum"
+      on host, "cd /etc/puppet/modules; git clone https://github.com/thomasvs/puppet-tao.git tao"
     end
   end
 end
