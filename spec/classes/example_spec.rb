@@ -14,6 +14,9 @@ describe 'postsrsd' do
           it { is_expected.to contain_class('postsrsd::params') }
           it { is_expected.to contain_class('postsrsd::install').that_comes_before('postsrsd::config') }
           it { is_expected.to contain_class('postsrsd::config') }
+          it { is_expected.to contain_file('/etc/sysconfig/postsrsd') \
+            .with_content(/^SRS_DOMAIN=/) }
+
           it { is_expected.to contain_class('postsrsd::service').that_subscribes_to('postsrsd::config') }
 
           it { is_expected.to contain_service('postsrsd') }
