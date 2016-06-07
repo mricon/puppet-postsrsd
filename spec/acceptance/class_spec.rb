@@ -32,4 +32,30 @@ describe 'postsrsd class' do
     end
 
   end
+
+  context 'custom parameters' do
+    # Using puppet_apply as a helper
+    it 'should work with different configuration' do
+      pp = <<-EOS
+      class { '::tao': }
+
+      class { 'postsrsd':
+        srs_domain => 'mydomain',
+        srs_reverse_port => '9998',
+        srs_forward_port => '9999',
+      }
+      EOS
+
+      apply_manifest(pp, :catch_failures => true)
+    end
+
+    describe file('/etc/sysconfig/postsrsd') do
+      it { should be_file }
+      its(:content) { should match /^SRS_DOMAIN=mydomain/ }
+      its(:content) { should match /^SRS_FORWARD_PORT=9999/ }
+      its(:content) { should match /^SRS_REVERSE_PORT=9998/ }
+    end
+
+
+  end
 end
