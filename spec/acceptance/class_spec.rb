@@ -26,7 +26,9 @@ describe 'postsrsd class' do
 
     describe file('/etc/sysconfig/postsrsd') do
       it { should be_file }
-      its(:content) { should match /^SRS_DOMAIN=/ }
+      its(:content) { should match /^SRS_DOMAIN=localdomain/ }
+      its(:content) { should match /^SRS_FORWARD_PORT=10001/ }
+      its(:content) { should match /^SRS_REVERSE_PORT=10002/ }
     end
 
   end
