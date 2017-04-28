@@ -1,10 +1,10 @@
 {
   "name": "postsrsd",
-  "version": "0.1.0",
-  "author": "thomas",
+  "version": "0.2.0",
+  "author": "Thomas Vander Stichele, Konstantin Ryabitsev",
   "summary": "Deploy postsrsd, Postfix Sender Rewriting Scheme daemon",
   "license": "Apache 2.0",
-  "source": "git@github.com:thomasvs/puppet-postsrsd.git",
+  "source": "https://github.com/mricon/puppet-postsrsd.git",
   "project_page": "",
   "issues_url": "",
   "dependencies": [
@@ -24,8 +24,6 @@
     {
       "operatingsystem": "RedHat",
       "operatingsystemrelease": [
-        "5",
-        "6",
         "7"
       ]
     }

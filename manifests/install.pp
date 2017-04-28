@@ -4,7 +4,9 @@
 #
 class postsrsd::install {
 
-  package { $::postsrsd::package_name:
-    ensure => present,
+  if $postsrsd::manage_package {
+    package { $postsrsd::package_name:
+      ensure => present,
+    }
   }
 }

@@ -5,10 +5,12 @@
 #
 class postsrsd::service {
 
-  service { $::postsrsd::service_name:
-    ensure     => running,
-    enable     => true,
-    hasstatus  => true,
-    hasrestart => true,
+  if $postsrsd::manage_service {
+    service { $::postsrsd::service_name:
+      ensure     => running,
+      enable     => true,
+      hasstatus  => true,
+      hasrestart => true,
+    }
   }
 }

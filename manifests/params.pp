@@ -4,14 +4,19 @@
 # It sets variables according to platform.
 #
 class postsrsd::params {
+  $manage_package = true
+  $manage_service = true
+
   case $::osfamily {
     'Debian': {
-      $package_name = 'postsrsd'
-      $service_name = 'postsrsd'
+      $package_name   = 'postsrsd'
+      $service_name   = 'postsrsd'
+      $sysconfig_file = '/etc/sysconfig/postsrsd'
     }
     'RedHat', 'Amazon': {
-      $package_name = 'postsrsd'
-      $service_name = 'postsrsd'
+      $package_name   = 'postsrsd'
+      $service_name   = 'postsrsd'
+      $sysconfig_file = '/etc/sysconfig/postsrsd'
     }
     default: {
       fail("${::operatingsystem} not supported")

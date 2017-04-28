@@ -1,2 +1,17 @@
 ---
-# Default key/value pairs
+postsrsd::sysconfig_file: '/etc/sysconfig/postsrsdtest'
+postsrsd::package_name: 'postsrsdtest'
+postsrsd::service_name: 'postsrsdtest'
+
+postsrsd::config::srs_domain: 'example.com'
+postsrsd::config::srs_exclude_domains:
+  - 'example.net'
+  - 'example.org'
+postsrsd::config::srs_separator: '-'
+postsrsd::config::srs_secret_content: 'bogusbogusbogusbogusbogus'
+postsrsd::config::srs_secret_file: '/etc/postsrsdtest.secret'
+postsrsd::config::srs_hashlength: 5
+postsrsd::config::srs_hashmin: 3
+postsrsd::config::srs_forward_port: 20001
+postsrsd::config::srs_reverse_port: 20002
+postsrsd::config::run_as: 'postsrsd'
