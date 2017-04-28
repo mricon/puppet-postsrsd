@@ -18,9 +18,9 @@ class postsrsd (
   Pattern['^\/'] $sysconfig_file = $postsrsd::params::sysconfig_file,
 ) inherits postsrsd::params {
 
-  anchor { 'postsrsd::begin': }  ->
-  class { 'postsrsd::install': } ->
-  class { 'postsrsd::config': }  ->
-  class { 'postsrsd::service': } ->
-  anchor { 'postsrsd::end': }
+  anchor { 'postsrsd::begin': }
+  ->class { '::postsrsd::install': }
+  ->class { '::postsrsd::config': }
+  ->class { '::postsrsd::service': }
+  ->anchor { 'postsrsd::end': }
 }

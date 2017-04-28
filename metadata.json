@@ -3,14 +3,14 @@
   "version": "0.2.0",
   "author": "Thomas Vander Stichele, Konstantin Ryabitsev",
   "summary": "Deploy postsrsd, Postfix Sender Rewriting Scheme daemon",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "source": "https://github.com/mricon/puppet-postsrsd.git",
   "project_page": "",
   "issues_url": "",
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
-      "version_requirement": ">= 1.0.0"
+      "version_requirement": ">= 4.0.0 <5.0.0"
     }
   ],
   "operatingsystem_support": [
