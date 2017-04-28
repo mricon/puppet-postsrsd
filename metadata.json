@@ -1,5 +1,5 @@
 {
-  "name": "postsrsd",
+  "name": "mricon-postsrsd",
   "version": "0.2.0",
   "author": "Thomas Vander Stichele, Konstantin Ryabitsev",
   "summary": "Deploy postsrsd, Postfix Sender Rewriting Scheme daemon",
