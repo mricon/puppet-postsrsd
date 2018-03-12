@@ -11,7 +11,7 @@ class postsrsd::params {
     'Debian': {
       $package_name   = 'postsrsd'
       $service_name   = 'postsrsd'
-      $sysconfig_file = '/etc/sysconfig/postsrsd'
+      $sysconfig_file = '/etc/default/postsrsd'
     }
     'RedHat', 'Amazon': {
       $package_name   = 'postsrsd'
