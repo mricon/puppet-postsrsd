@@ -125,5 +125,5 @@ Default: undef
 This module will NOT make any changes to your postfix installation, so you
 will need to adjust your configuration using the postfix module.
 
-Written and tested for CentOS 7 only. To get the package, please see
+Written and tested for CentOS 7 and Debian stretch (9) only. To get the package for CentOS, please see
 https://copr.fedorainfracloud.org/coprs/natolumin/postsrsd/
