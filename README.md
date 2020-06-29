@@ -115,6 +115,9 @@ Default: 10001
 #### `srs_reverse_port`
 Default: 10002
 
+#### `srs_listen_addr`
+Default: 127.0.0.1
+
 #### `run_as`
 Default: `nobody`
 

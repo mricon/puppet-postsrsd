@@ -14,4 +14,5 @@ postsrsd::config::srs_hashlength: 5
 postsrsd::config::srs_hashmin: 3
 postsrsd::config::srs_forward_port: 20001
 postsrsd::config::srs_reverse_port: 20002
+postsrsd::config::srs_listen_addr: '127.0.0.1'
 postsrsd::config::run_as: 'postsrsd'

@@ -12,6 +12,7 @@ class postsrsd::config (
   Integer            $srs_hashmin         = 4,
   Integer[0, 65535]  $srs_forward_port    = 10001,
   Integer[0, 65535]  $srs_reverse_port    = 10002,
+  String             $srs_listen_addr     = '127.0.0.1',
   String             $run_as              = 'nobody',
   Optional[String]   $chroot              = undef,
 ) {
